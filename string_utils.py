@@ -1,6 +1,29 @@
 def split_before_each_uppercases(formula):
-    pass # Replace the `pass` with your code
+    t = []
+    splited_formula = []
+
+    for char in formula:
+        if char.isupper():
+            if t:  # only append if t is not empty
+                splited_formula.append(''.join(t))
+            t = [char]
+        else:
+            t.append(char)
+
+    if t:  # append the last chunk after the loop
+        splited_formula.append(''.join(t))
+
+    return splited_formula
 
 
 def split_at_first_digit(formula):
-    pass # Replace the `pass` with your code
+    digits = []
+    letters = []
+    for char in formula:
+        if char.isdigit():
+            digits.append(char)
+        else:
+            letters.append(char)
+    if digits == []:
+      digits.append("1")
+    return ''.join(letters), ''.join(digits)
