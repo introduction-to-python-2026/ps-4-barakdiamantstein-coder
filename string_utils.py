@@ -25,5 +25,5 @@ def split_at_first_digit(formula):
         else:
             letters.append(char)
     if digits == []:
-      digits.append("1")
-    return ''.join(letters), ''.join(digits)
+        digits.append("1")
+    return ''.join(letters), int(''.join(digits))
